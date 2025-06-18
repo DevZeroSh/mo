@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const blogController_1 = require("../controllers/blogController");
+const router = (0, express_1.Router)();
+router.post("/", blogController_1.createBlog);
+router.get("/", blogController_1.getAllBlogs);
+router.get("/category/:slug", blogController_1.getBlogsByCategory);
+router.get("/:id", blogController_1.getBlogById);
+router.get("/slug/:slug", blogController_1.getBlogBySlug);
+router.put("/:id", blogController_1.updateBlog);
+router.delete("/:id", blogController_1.deleteBlog);
+exports.default = router;
